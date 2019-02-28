@@ -1,0 +1,42 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+{#
+/**
+ * NSM Rollbar plugin for Craft CMS 3.x
+ *
+ * NSM Rollbar Settings.twig
+ *
+ * @author    Leevi Graham
+ * @copyright Copyright (c) 2019 Leevi Graham
+ * @link      https://newis.com.au
+ * @package   Rollbar
+ * @since     0.0.0
+ */
+#}
+
+{% import '_includes/forms' as forms %}
+
+{% do view.registerAssetBundle('newism\\rollbar\\assetbundles\\rollbar\\RollbarAsset') %}
+
+{{ forms.textField({
+    label: 'Access Token'|t('newism-rollbar'),
+    instructions: 'Your project\'s <code>post_server_item</code> access token, which you can find in the Rollbar.com interface.',
+    id: 'accessToken',
+    name: 'accessToken',
+    value: settings['accessToken']
+}) }}
+
+{{ forms.lightSwitchField({
+    label: 'Enable Rollbar JS integration'|t('newism-rollbar'),
+    instructions: 'See: <a href="https://docs.rollbar.com/docs/browser-js">https://docs.rollbar.com/docs/browser-js</a>',
+    id: 'enableJs',
+    name: 'enableJs',
+    on: settings['enableJs']
+}) }}
+
+{{ forms.textField({
+    label: 'Post Client Item Access Token'|t('newism-rollbar'),
+    instructions: 'Your project\'s <code>post_client_item</code> access token, which you can find in the Rollbar.com interface.',
+    id: 'postClientItemAccessToken',
+    name: 'postClientItemAccessToken',
+    value: settings['postClientItemAccessToken']
+}) }}

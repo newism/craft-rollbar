@@ -1,0 +1,39 @@
+{
+    "name": "newism/craft-rollbar",
+    "description": "Rollbar integration for CraftCMS",
+    "type": "craft-plugin",
+    "version": "0.0.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "rollbar"
+    ],
+    "support": {
+        "docs": "https://github.com/newism/nsm-rollbar/blob/master/README.md",
+        "issues": "https://github.com/newism/nsm-rollbar/issues"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Newism",
+            "homepage": "https://newis.com.au"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.1",
+        "rollbar/rollbar": "^1.7"
+    },
+    "autoload": {
+        "psr-4": {
+          "newism\\rollbar\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Rollbar",
+        "handle": "newism-rollbar",
+        "hasCpSettings": true,
+        "hasCpSection": false
+    }
+}
