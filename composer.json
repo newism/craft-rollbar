@@ -2,7 +2,6 @@
     "name": "newism/craft-rollbar",
     "description": "Rollbar integration for CraftCMS",
     "type": "craft-plugin",
-    "version": "0.0.0",
     "keywords": [
         "craft",
         "cms",
