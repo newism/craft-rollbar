@@ -10,8 +10,9 @@
         "rollbar"
     ],
     "support": {
-        "docs": "https://github.com/newism/nsm-rollbar/blob/master/README.md",
-        "issues": "https://github.com/newism/nsm-rollbar/issues"
+        "docs": "https://github.com/newism/craft-rollbar/blob/master/README.md",
+        "issues": "https://github.com/newism/craft-rollbar/issues",
+        "changelog": "https://github.com/newism/craft-rollbar/blob/master/CHANGELOG.md"
     },
     "license": "MIT",
     "authors": [
