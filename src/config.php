@@ -31,6 +31,6 @@ return [
     "enableJs" => '',
 
     // Your project's post_client_item access token, which you can find in the Rollbar.com interface.
-    'postClientItemaccessToken' => '',
+    'postClientItemAccessToken' => '',
 
 ];
