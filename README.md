@@ -1,6 +1,6 @@
 <p align="center"><img src="./src/icon.svg" width="100" height="100" alt="Rollbar for Craft CMS"></p>
 
-<h1 align="center">Rollbar plugin for Craft Commerce</h1>
+<h1 align="center">Rollbar plugin for Craft CMS</h1>
 
 This plugin provides an [Rollbar](https://rollbar.com) integration for [Craft CMS v3.x](https://craftcms.com).
 
