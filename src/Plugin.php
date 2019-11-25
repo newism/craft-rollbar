@@ -13,8 +13,10 @@ namespace newism\rollbar;
 use Craft;
 use craft\base\Plugin as BasePlugin;
 use craft\events\ExceptionEvent;
+use craft\events\RegisterUrlRulesEvent;
 use craft\events\TemplateEvent;
 use craft\web\ErrorHandler;
+use craft\web\UrlManager;
 use craft\web\View;
 use newism\rollbar\models\Settings;
 use Rollbar\Rollbar;
@@ -95,6 +97,14 @@ class Plugin extends BasePlugin
                 }
             );
         }
+
+        Event::on(
+            UrlManager::class,
+            UrlManager::EVENT_REGISTER_CP_URL_RULES,
+            function (RegisterUrlRulesEvent $event) {
+                $event->rules['settings/plugins/newism-rollbar/test'] = 'newism-rollbar/admin/test';
+            }
+        );
 
         if($this->settings->enableJs && $this->settings->postClientItemAccessToken) {
             // Load JS before template is rendered

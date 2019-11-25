@@ -56,9 +56,9 @@ class RollbarAsset extends AssetBundle
 //            'js/Rollbar.js',
 //        ];
 //
-//        $this->css = [
-//            'css/Rollbar.css',
-//        ];
+        $this->css = [
+            'css/Rollbar.css',
+        ];
 
         parent::init();
     }

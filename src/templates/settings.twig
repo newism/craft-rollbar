@@ -25,6 +25,14 @@
     value: settings['accessToken']
 }) }}
 
+{% if (settings['accessToken']) %}
+    <a href="./newism-rollbar/test" class="btn">Send test message to Rollbar</a>
+    {% set message = craft.app.session.getFlash('newism-rollbar-setting') %}
+    {% if message|length > 0 %}
+        <div class="notification">{{message}}</div>
+    {% endif %}
+{% endif %}
+
 {{ forms.lightSwitchField({
     label: 'Enable Rollbar JS integration'|t('newism-rollbar'),
     instructions: 'See: <a href="https://docs.rollbar.com/docs/browser-js">https://docs.rollbar.com/docs/browser-js</a>',
