@@ -26,7 +26,7 @@
 }) }}
 
 {% if (settings['accessToken']) %}
-    <a href="./newism-rollbar/test" class="btn">Send test message to Rollbar</a>
+    <a href="{{ cpUrl('settings/plugins/newism-rollbar/test') }}" class="btn">Send test message to Rollbar</a>
     {% set message = craft.app.session.getFlash('newism-rollbar-setting') %}
     {% if message|length > 0 %}
         <div class="notification">{{message}}</div>
