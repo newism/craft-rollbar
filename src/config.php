@@ -25,10 +25,10 @@
 return [
 
     // Your project's post_server_item access token, which you can find in the Rollbar.com interface.
-    "accessToken" => '',
+    'accessToken' => '',
 
     // See: https://docs.rollbar.com/docs/browser-js
-    "enableJs" => '',
+    'enableJs' => false,
 
     // Your project's post_client_item access token, which you can find in the Rollbar.com interface.
     'postClientItemAccessToken' => '',
