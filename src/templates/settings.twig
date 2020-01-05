@@ -15,6 +15,8 @@
 
 {% import '_includes/forms' as forms %}
 
+{% import 'newism-rollbar/settings/_includes/macros' as macros %}
+
 {% do view.registerAssetBundle('newism\\rollbar\\assetbundles\\rollbar\\RollbarAsset') %}
 
 {{ forms.textField({
@@ -22,7 +24,9 @@
     instructions: 'Your project\'s <code>post_server_item</code> access token, which you can find in the Rollbar.com interface.',
     id: 'accessToken',
     name: 'accessToken',
-    value: settings['accessToken']
+    value: settings['accessToken'],
+    warning: macros.configWarning('accessToken', 'newism-rollbar'),
+    errors: settings.getErrors('accessToken')
 }) }}
 
 {{ forms.lightSwitchField({
@@ -30,7 +34,9 @@
     instructions: 'See: <a href="https://docs.rollbar.com/docs/browser-js">https://docs.rollbar.com/docs/browser-js</a>',
     id: 'enableJs',
     name: 'enableJs',
-    on: settings['enableJs']
+    on: settings['enableJs'],
+    warning: macros.configWarning('enableJs', 'newism-rollbar'),
+    errors: settings.getErrors('enableJs')
 }) }}
 
 {{ forms.textField({
@@ -38,5 +44,7 @@
     instructions: 'Your project\'s <code>post_client_item</code> access token, which you can find in the Rollbar.com interface.',
     id: 'postClientItemAccessToken',
     name: 'postClientItemAccessToken',
-    value: settings['postClientItemAccessToken']
+    value: settings['postClientItemAccessToken'],
+    warning: macros.configWarning('postClientItemAccessToken', 'newism-rollbar'),
+    errors: settings.getErrors('postClientItemAccessToken')
 }) }}
