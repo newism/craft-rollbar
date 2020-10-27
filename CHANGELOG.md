@@ -7,3 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 ## 1.0.0-beta1 - 2019-02-28
 ### Added
 - Initial release
+
+## 1.0.0 - 2020-10-27
+### Added
+- Composer 2 support
