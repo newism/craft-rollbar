@@ -6,7 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## 1.1.0 - 2021-02-18
 ### Added
-- Added setting to ignore exceptions (https://github.com/newism/craft-rollbar/pull/14)[#14]
+- Added setting to ignore exceptions [https://github.com/newism/craft-rollbar/pull/14](#14)
 
 ## 1.0.0 - 2020-10-27
 ### Added
