@@ -42,6 +42,7 @@ class Settings extends Model
     public $accessToken;
     public $enableJs;
     public $postClientItemAccessToken;
+    public $exceptionIgnoreList;
 
     // Public Methods
     // =========================================================================
@@ -63,6 +64,23 @@ class Settings extends Model
             ['accessToken', 'default', 'value' => ''],
             ['postClientItemAccessToken', 'string'],
             ['postClientItemAccessToken', 'default', 'value' => ''],
+            ['exceptionIgnoreList', 'default', 'value' => ''],
         ];
     }
+
+    /**
+     * Returns an Traversable containing all ignored exceptions
+     * @return \Traversable
+     */
+    public function getExceptionsToIgnore() : \Traversable
+    {
+        if($this->exceptionIgnoreList != null)
+        {
+            foreach(explode(",", $this->exceptionIgnoreList) as $exception)
+            {
+                yield trim(strtolower($exception));
+            }
+        }
+    }
+
 }

@@ -15,7 +15,7 @@
 
 {% import '_includes/forms' as forms %}
 
-{% import 'newism-rollbar/settings/_includes/macros' as macros %}
+{% import 'newism-rollbar/_includes/macros' as macros %}
 
 {% do view.registerAssetBundle('newism\\rollbar\\assetbundles\\rollbar\\RollbarAsset') %}
 
@@ -55,4 +55,14 @@
     value: settings['postClientItemAccessToken'],
     warning: macros.configWarning('postClientItemAccessToken', 'newism-rollbar'),
     errors: settings.getErrors('postClientItemAccessToken')
+}) }}
+
+{{ forms.textField({
+    label: 'Exceptions to Ignore (comma separated)'|t('newism-rollbar'),
+    instructions: 'If you wish Rollbar to ignore any exception types, please provide the fully qualified name here, separated by a comma',
+    id: 'exceptionIgnoreList',
+    name: 'exceptionIgnoreList',
+    value: settings['exceptionIgnoreList'],
+    warning: macros.configWarning('exceptionIgnoreList', 'newism-rollbar'),
+    errors: settings.getErrors('exceptionIgnoreList')
 }) }}
