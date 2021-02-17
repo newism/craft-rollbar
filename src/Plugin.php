@@ -87,6 +87,12 @@ class Plugin extends BasePlugin
                 ErrorHandler::class,
                 ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
                 function (ExceptionEvent $event) {
+                    //check to see if this exception type is in our ignore list
+                    $ignoreList = iterator_to_array($this->settings->getExceptionsToIgnore());
+                    if(in_array(strtolower(get_class($event->exception)), $ignoreList)) {
+                        return;
+                    }
+
                     Rollbar::init(
                         [
                             'access_token' => $this->settings->accessToken,
