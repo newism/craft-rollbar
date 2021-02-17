@@ -53,6 +53,9 @@ You may then decide to configure your Rollbar gateway using a [config file](http
 
         // Your project's post_client_item access token, which you can find in the Rollbar.com interface.
         'postClientItemAccessToken' => '',
+        
+        // If you wish Rollbar to ignore any exception types, please provide the fully qualified name here, separated by a comma
+        'exceptionIgnoreList' => '',
     ]; 
 
 ## Roadmap
