@@ -88,8 +88,8 @@ class Plugin extends BasePlugin
                 ErrorHandler::EVENT_BEFORE_HANDLE_EXCEPTION,
                 function (ExceptionEvent $event) {
                     //check to see if this exception type is in our ignore list
-                    $ignoreList = $this->settings->getExceptionsToIgnore();
-                    if(in_array(strtolower(get_class($this->event), $ignoreList))) {
+                    $ignoreList = iterator_to_array($this->settings->getExceptionsToIgnore());
+                    if(in_array(strtolower(get_class($event->exception)), $ignoreList)) {
                         return;
                     }
 
