@@ -6,11 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 
 ## 1.2.0 - 2021-05-07
 ### Fixed
-- Fixed FQDN capialisation for plugin settings and assets [https://github.com/newism/craft-rollbar/pull/15](#15) [https://github.com/newism/craft-rollbar/pull/17](#17)
+- Fixed FQDN capialisation for plugin settings and assets [#15](https://github.com/newism/craft-rollbar/pull/15) [#17](https://github.com/newism/craft-rollbar/pull/17)
 
 ## 1.1.0 - 2021-02-18
 ### Added
-- Added setting to ignore exceptions [https://github.com/newism/craft-rollbar/pull/14](#14)
+- Added setting to ignore exceptions [#14](https://github.com/newism/craft-rollbar/pull/14)
 
 ## 1.0.0 - 2020-10-27
 ### Added
