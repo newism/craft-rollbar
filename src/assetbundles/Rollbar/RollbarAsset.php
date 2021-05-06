@@ -43,7 +43,7 @@ class RollbarAsset extends AssetBundle
     public function init()
     {
         // define the path that your publishable resources live
-        $this->sourcePath = '@newism/rollbar/assetbundles/rollbar/dist';
+        $this->sourcePath = '@newism/rollbar/assetbundles/Rollbar/dist';
 
         // define the dependencies
         $this->depends = [
