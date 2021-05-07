@@ -24,7 +24,7 @@
     "require": {
         "craftcms/cms": "^3.1",
         "php": "^7.1",
-        "rollbar/rollbar": "^1.7"
+        "rollbar/rollbar": "^v2"
     },
     "autoload": {
         "psr-4": {
