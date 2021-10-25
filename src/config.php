@@ -33,4 +33,6 @@ return [
     // Your project's post_client_item access token, which you can find in the Rollbar.com interface.
     'postClientItemAccessToken' => '',
 
+    // Comma delimited list of Exception classes to ignore.
+    'exceptionIgnoreList' => ''
 ];
