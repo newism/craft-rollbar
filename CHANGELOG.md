@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
 
+## 1.3.0 - 2021-10-25
+### Fixed
+- Updated `rollbar/rollbar` dependency to `^2.0`
+
 ## 1.2.0 - 2021-05-07
 ### Fixed
 - Fixed FQDN capialisation for plugin settings and assets [#15](https://github.com/newism/craft-rollbar/pull/15) [#17](https://github.com/newism/craft-rollbar/pull/17)
