@@ -19,14 +19,16 @@
 
 {% do view.registerAssetBundle('newism\\rollbar\\assetbundles\\Rollbar\\RollbarAsset') %}
 
-{{ forms.textField({
+{{ forms.autoSuggestField({
     label: 'Access Token'|t('newism-rollbar'),
     instructions: 'Your project\'s <code>post_server_item</code> access token, which you can find in the Rollbar.com interface.',
     id: 'accessToken',
     name: 'accessToken',
     value: settings['accessToken'],
+    required: true,
     warning: macros.configWarning('accessToken', 'newism-rollbar'),
-    errors: settings.getErrors('accessToken')
+    errors: settings.getErrors('accessToken'),
+    suggestEnvVars: true
 }) }}
 
 {% if (settings['accessToken']) %}
@@ -47,14 +49,15 @@
     errors: settings.getErrors('enableJs')
 }) }}
 
-{{ forms.textField({
+{{ forms.autoSuggestField({
     label: 'Post Client Item Access Token'|t('newism-rollbar'),
     instructions: 'Your project\'s <code>post_client_item</code> access token, which you can find in the Rollbar.com interface.',
     id: 'postClientItemAccessToken',
     name: 'postClientItemAccessToken',
     value: settings['postClientItemAccessToken'],
     warning: macros.configWarning('postClientItemAccessToken', 'newism-rollbar'),
-    errors: settings.getErrors('postClientItemAccessToken')
+    errors: settings.getErrors('postClientItemAccessToken'),
+    suggestEnvVars: true
 }) }}
 
 {{ forms.textField({

@@ -96,7 +96,7 @@ class Plugin extends BasePlugin
 
                     Rollbar::init(
                         [
-                            'access_token' => $this->settings->accessToken,
+                            'access_token' => $this->settings->getAccessToken(),
                             'environment' => App::env('CRAFT_ENVIRONMENT'),
                         ]
                     );
@@ -113,7 +113,7 @@ class Plugin extends BasePlugin
             }
         );
 
-        if($this->settings->enableJs && $this->settings->postClientItemAccessToken) {
+        if($this->settings->enableJs && $this->settings->getPostClientItemAccessToken()) {
             // Load JS before template is rendered
             Event::on(
                 View::class,
@@ -145,14 +145,6 @@ class Plugin extends BasePlugin
         return new Settings();
     }
 
-    /**
-     * Returns the rendered settings HTML, which will be inserted into the content
-     * block on the settings page.
-     *
-     * @return string
-     * @throws \Twig_Error_Loader
-     * @throws \yii\base\Exception
-     */
     protected function settingsHtml(): string
     {
         return Craft::$app->view->renderTemplate(
