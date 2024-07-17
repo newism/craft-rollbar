@@ -2,7 +2,7 @@
 
 <h1 align="center">Rollbar plugin for Craft CMS</h1>
 
-This plugin provides an [Rollbar](https://rollbar.com) integration for [Craft CMS v3.x](https://craftcms.com).
+This plugin provides an [Rollbar](https://rollbar.com) integration for [Craft CMS v4.x](https://craftcms.com).
 
 ## Features
 
@@ -56,41 +56,18 @@ You may then decide to configure your Rollbar gateway using a [config file](http
         
         // If you wish Rollbar to ignore any exception types, please provide the fully qualified name here, separated by a comma
         'exceptionIgnoreList' => '',
-    ]; 
-
-## Roadmap
-
-1. Implement logging levels
-2. More configuration options
+    ];
 
 ## Support
 
-### GitHub
-
 If you've found a bug, or would like to make a feature request,
-head to the [GitHub Repo](https://github.com/newism/craft-rollbar/issues) and file an issue. 
+head to the [GitHub Repo](https://github.com/chrismou/craft-rollbar/issues) and file an issue. 
 Pull requests are also most welcome!
-
-### Twitter
-
-Get our attention on Twitter by using the `#craftcms` hashtag and mentioning [@newism](https://twitter.com/newism)
-
-### Stack Exchange
-
-Ask a question via the [Craft Stack Exchange](http://craftcms.stackexchange.com/) and tag your question with `plugin-newism-craft-rollbar`.
 
 ### Email
 
-Any feedback, comments, questions or suggestions please email us at `support at newism.com.au`.
-
-## Licensing
-
-You can try this plugin in a development environment for as long as you like.
-
-For more information, see [Craft's Commercial Plugin Licensing](https://docs.craftcms.com/v3/plugins.html#commercial-plugin-licensing).
+Any feedback, comments, questions or suggestions please email us at `dev at mou.me`.
 
 ----
 
-<img src="./src/newism-logo.svg" width="100" height="100" alt="Afterpay for Craft Commerce icon">
-
-Brought to you by [Newism](https://newism.com.au)
+Maintained by [Chris Chrisostomou](https://mou.me) with thanks to the original developer, [Newism](https://newism.com.au)
