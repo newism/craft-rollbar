@@ -1,6 +1,6 @@
 <?php
 /**
- * NSM Rollbar plugin for Craft CMS 3.x
+ * NSM Rollbar plugin for Craft CMS
  *
  * Rollbar integration for CraftCMS
  *
