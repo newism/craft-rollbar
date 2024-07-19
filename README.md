@@ -2,7 +2,7 @@
 
 <h1 align="center">Rollbar plugin for Craft CMS</h1>
 
-This plugin provides an [Rollbar](https://rollbar.com) integration for [Craft CMS v4.x](https://craftcms.com).
+This plugin provides [Rollbar](https://rollbar.com) integration for [Craft CMS](https://craftcms.com).
 
 ## Features
 
@@ -61,7 +61,7 @@ You may then decide to configure your Rollbar gateway using a [config file](http
 ## Support
 
 If you've found a bug, or would like to make a feature request,
-head to the [GitHub Repo](https://github.com/chrismou/craft-rollbar/issues) and file an issue. 
+head to the [GitHub Repo](https://github.com/newism/craft-rollbar/issues) and file an issue. 
 Pull requests are also most welcome!
 
 ### Email
@@ -70,4 +70,4 @@ Any feedback, comments, questions or suggestions please email us at `dev at mou.
 
 ----
 
-Maintained by [Chris Chrisostomou](https://mou.me) with thanks to the original developer, [Newism](https://newism.com.au)
+Brought to you by [Newism](https://newism.com.au), maintained by [Chris Chrisostomou](https://mou.me)
