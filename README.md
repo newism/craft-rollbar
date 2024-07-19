@@ -2,7 +2,7 @@
 
 <h1 align="center">Rollbar plugin for Craft CMS</h1>
 
-This plugin provides [Rollbar](https://rollbar.com) integration for [Craft CMS](https://craftcms.com).
+This plugin provides a [Rollbar](https://rollbar.com) integration for [Craft CMS](https://craftcms.com).
 
 ## Features
 
@@ -11,13 +11,13 @@ This plugin provides [Rollbar](https://rollbar.com) integration for [Craft CMS](
 
 ## Requirements
 
-This plugin requires Craft CMS 3.1 or later
+This plugin requires Craft CMS 4 or later. For Craft 3 support, please use the 3.x branch.
 
 ## Installation
 
 ### Plugin Store
 
-To install `Rollbar`, navigate to the Plugin Store section of your Craft control panel, search for `Rollbar`, and click the Try button.
+To install [Rollbar](https://rollbar.com/), navigate to the Plugin Store section of your Craft control panel, search for `Rollbar`, and click the Install button.
 
 ### Composer
 
@@ -37,11 +37,14 @@ You can also add the package to your project using Composer.
 
 First you'll need to setup a [Rollbar account](https://rollbar.com/).
 
-Once you have an account you'll be provided with an `Access Key`. 
+Once you have an account and created your project, you'll be provided with an `Access Key`. We recommend adding this 
+to your `.env` file. Then navigate to Settings > Plugins > Rollbar and start typing the name of your environment 
+variable in the `Access Token` field, until you see your variable name in the autocomplete box.
 
-To add the Afterpay payment gateway, go to Settings → Plugins → Rollbar and enter the access key.
+In order to log JS exceptions, you'll also need to add your `postClientItemAccessToken` using the same method as above.
 
-You may then decide to configure your Rollbar gateway using a [config file](https://docs.craftcms.com/commerce/v2/gateway-config.html#gateway-configuration). An example file looks like:
+You can also configure your Rollbar gateway using a [config file](https://docs.craftcms.com/commerce/v2/gateway-config.html#gateway-configuration). 
+An example file looks like:
 
     <?php
     return [
