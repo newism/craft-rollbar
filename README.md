@@ -8,7 +8,7 @@ See: https://johnhenry.ie/articles/2024/08/error-reporting-with-rollbar-and-craf
 
 <h1 align="center">Rollbar plugin for Craft CMS</h1>
 
-This plugin provides an [Rollbar](https://rollbar.com) integration for [Craft CMS v3.x](https://craftcms.com).
+This plugin provides a [Rollbar](https://rollbar.com) integration for [Craft CMS](https://craftcms.com).
 
 ## Features
 
@@ -17,13 +17,13 @@ This plugin provides an [Rollbar](https://rollbar.com) integration for [Craft CM
 
 ## Requirements
 
-This plugin requires Craft CMS 3.1 or later
+This plugin requires Craft CMS 4 or later. For Craft 3 support, please use the 3.x branch.
 
 ## Installation
 
 ### Plugin Store
 
-To install `Rollbar`, navigate to the Plugin Store section of your Craft control panel, search for `Rollbar`, and click the Try button.
+To install [Rollbar](https://rollbar.com/), navigate to the Plugin Store section of your Craft control panel, search for `Rollbar`, and click the Install button.
 
 ### Composer
 
@@ -43,11 +43,14 @@ You can also add the package to your project using Composer.
 
 First you'll need to setup a [Rollbar account](https://rollbar.com/).
 
-Once you have an account you'll be provided with an `Access Key`. 
+Once you have an account and created your project, you'll be provided with an `Access Key`. We recommend adding this 
+to your `.env` file. Then navigate to Settings > Plugins > Rollbar and start typing the name of your environment 
+variable in the `Access Token` field, until you see your variable name in the autocomplete box.
 
-To add the Afterpay payment gateway, go to Settings → Plugins → Rollbar and enter the access key.
+In order to log JS exceptions, you'll also need to add your `postClientItemAccessToken` using the same method as above.
 
-You may then decide to configure your Rollbar gateway using a [config file](https://docs.craftcms.com/commerce/v2/gateway-config.html#gateway-configuration). An example file looks like:
+You can also configure your Rollbar gateway using a [config file](https://docs.craftcms.com/commerce/v2/gateway-config.html#gateway-configuration). 
+An example file looks like:
 
     <?php
     return [
@@ -62,41 +65,18 @@ You may then decide to configure your Rollbar gateway using a [config file](http
         
         // If you wish Rollbar to ignore any exception types, please provide the fully qualified name here, separated by a comma
         'exceptionIgnoreList' => '',
-    ]; 
-
-## Roadmap
-
-1. Implement logging levels
-2. More configuration options
+    ];
 
 ## Support
-
-### GitHub
 
 If you've found a bug, or would like to make a feature request,
 head to the [GitHub Repo](https://github.com/newism/craft-rollbar/issues) and file an issue. 
 Pull requests are also most welcome!
 
-### Twitter
-
-Get our attention on Twitter by using the `#craftcms` hashtag and mentioning [@newism](https://twitter.com/newism)
-
-### Stack Exchange
-
-Ask a question via the [Craft Stack Exchange](http://craftcms.stackexchange.com/) and tag your question with `plugin-newism-craft-rollbar`.
-
 ### Email
 
-Any feedback, comments, questions or suggestions please email us at `support at newism.com.au`.
-
-## Licensing
-
-You can try this plugin in a development environment for as long as you like.
-
-For more information, see [Craft's Commercial Plugin Licensing](https://docs.craftcms.com/v3/plugins.html#commercial-plugin-licensing).
+Any feedback, comments, questions or suggestions please email us at `dev at mou.me`.
 
 ----
 
-<img src="./src/newism-logo.svg" width="100" height="100" alt="Afterpay for Craft Commerce icon">
-
-Brought to you by [Newism](https://newism.com.au)
+Brought to you by [Newism](https://newism.com.au), maintained by [Chris Chrisostomou](https://mou.me)

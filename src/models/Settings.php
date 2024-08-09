@@ -1,6 +1,6 @@
 <?php
 /**
- * NSM Rollbar plugin for Craft CMS 3.x
+ * NSM Rollbar plugin for Craft CMS
  *
  * Rollbar integration for CraftCMS
  *
@@ -10,9 +10,8 @@
 
 namespace newism\rollbar\models;
 
-use newism\rollbar\Plugin;
-
-use Craft;
+use craft\behaviors\EnvAttributeParserBehavior;
+use craft\helpers\App;
 use craft\base\Model;
 
 /**
@@ -57,14 +56,23 @@ class Settings extends Model
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['accessToken', 'string'],
-            ['accessToken', 'default', 'value' => ''],
+            ['accessToken', 'required'],
             ['postClientItemAccessToken', 'string'],
-            ['postClientItemAccessToken', 'default', 'value' => ''],
             ['exceptionIgnoreList', 'default', 'value' => ''],
+        ];
+    }
+
+    public function behaviors() :array
+    {
+        return [
+            'parser' => [
+                'class' => EnvAttributeParserBehavior::class,
+                'attributes' => ['accessToken', 'postClientItemAccessToken'],
+            ],
         ];
     }
 
@@ -83,4 +91,13 @@ class Settings extends Model
         }
     }
 
+    public function getAccessToken(): string
+    {
+        return App::parseEnv($this->accessToken);
+    }
+
+    public function getPostClientItemAccessToken(): string
+    {
+        return App::parseEnv($this->postClientItemAccessToken);
+    }
 }

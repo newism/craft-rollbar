@@ -1,6 +1,6 @@
 <?php
 /**
- * NSM Rollbar plugin for Craft CMS 3.x
+ * NSM Rollbar plugin for Craft CMS
  *
  * Rollbar integration for CraftCMS
  *
@@ -15,6 +15,7 @@ use craft\base\Plugin as BasePlugin;
 use craft\events\ExceptionEvent;
 use craft\events\RegisterUrlRulesEvent;
 use craft\events\TemplateEvent;
+use craft\helpers\App;
 use craft\web\ErrorHandler;
 use craft\web\UrlManager;
 use craft\web\View;
@@ -95,8 +96,8 @@ class Plugin extends BasePlugin
 
                     Rollbar::init(
                         [
-                            'access_token' => $this->settings->accessToken,
-                            'environment' => CRAFT_ENVIRONMENT,
+                            'access_token' => $this->settings->getAccessToken(),
+                            'environment' => App::env('CRAFT_ENVIRONMENT'),
                         ]
                     );
                     Rollbar::error($event->exception);
@@ -112,7 +113,7 @@ class Plugin extends BasePlugin
             }
         );
 
-        if($this->settings->enableJs && $this->settings->postClientItemAccessToken) {
+        if($this->settings->enableJs && $this->settings->getPostClientItemAccessToken()) {
             // Load JS before template is rendered
             Event::on(
                 View::class,
@@ -123,7 +124,7 @@ class Plugin extends BasePlugin
                         'accessToken' => $this->settings->postClientItemAccessToken,
                         'captureUncaught' => true,
                         'payload' => [
-                            'environment' => CRAFT_ENVIRONMENT,
+                            'environment' => App::env('CRAFT_ENVIRONMENT'),
                         ],
                     ]);
                     $rollbarJs = $rollbarJsHelper->configJsTag() . $rollbarJsHelper->jsSnippet();
@@ -144,14 +145,6 @@ class Plugin extends BasePlugin
         return new Settings();
     }
 
-    /**
-     * Returns the rendered settings HTML, which will be inserted into the content
-     * block on the settings page.
-     *
-     * @return string
-     * @throws \Twig_Error_Loader
-     * @throws \yii\base\Exception
-     */
     protected function settingsHtml(): string
     {
         return Craft::$app->view->renderTemplate(
