@@ -1,3 +1,9 @@
+# Archived
+
+This plugin is now archived.
+
+See: https://johnhenry.ie/articles/2024/08/error-reporting-with-rollbar-and-craft-cms for an alternative implementation of Rollbar.
+
 <p align="center"><img src="./src/icon.svg" width="100" height="100" alt="Rollbar for Craft CMS"></p>
 
 <h1 align="center">Rollbar plugin for Craft CMS</h1>
